@@ -2,32 +2,34 @@ package com.example.firstmidterm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FirstActivity extends AppCompatActivity {
-    TextView tvHobby;
-    Button btnNext, btnInfo;
+    Button btnDance, btnReading, btnBaking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        tvHobby = findViewById(R.id.tvHobby);
-        btnNext = findViewById(R.id.btnNext);
-        btnInfo = findViewById(R.id.btnInfo);
+        btnDance = findViewById(R.id.btnDance);
+        btnReading = findViewById(R.id.btnReading);
+        btnBaking = findViewById(R.id.btnBaking);
 
-        tvHobby.setText("Я люблю танцевать");
-
-        btnNext.setOnClickListener(v -> {
-            Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+        btnDance.setOnClickListener(v -> {
+            Intent intent = new Intent(FirstActivity.this, DanceActivity.class);
             startActivity(intent);
         });
 
-        btnInfo.setOnClickListener(v -> tvHobby.setText("Это мое любимое хобби!"));
+        btnReading.setOnClickListener(v -> {
+            Intent intent = new Intent(FirstActivity.this, ReadingActivity.class);
+            startActivity(intent);
+        });
+
+        btnBaking.setOnClickListener(v -> {
+            Intent intent = new Intent(FirstActivity.this, BakingActivity.class);
+            startActivity(intent);
+        });
     }
 }
